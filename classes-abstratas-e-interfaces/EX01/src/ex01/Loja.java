@@ -5,6 +5,8 @@
  */
 package ex01;
 
+import java.util.Arrays;
+
 /**
  *
  * @author gabriel
@@ -42,6 +44,12 @@ public class Loja {
             System.out.println("Objeto está na posição: " + resultadoBusca);
         } else {
             System.out.println("Objeto não foi encontrado");
+        }
+        
+        Arrays.sort(media);
+        
+        for (Produto item : media) {
+            System.out.println(item.toString());
         }
     }
 

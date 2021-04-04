@@ -9,7 +9,7 @@ package ex01;
  *
  * @author gabriel
  */
-public abstract class Produto implements Comparable {
+public abstract class Produto implements Comparable<Produto> {
     private String nome;
     private double preco;
     private int codigoBarras;
@@ -54,7 +54,6 @@ public abstract class Produto implements Comparable {
      
     public abstract String toString();
     
-    @Override
     public boolean comparaNome(Produto x) {
         if (this.getNome() == x.getNome()) {
             return true;
@@ -62,4 +61,13 @@ public abstract class Produto implements Comparable {
         
         return false;
     };
+    
+    @Override
+    public int compareTo(Produto t) {
+        if (this.getCodigoBarras() == t.getCodigoBarras()) {
+            return 1;
+        }
+        
+        return 0;
+    }
 }
